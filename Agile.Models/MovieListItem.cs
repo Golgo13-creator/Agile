@@ -11,8 +11,8 @@ namespace Agile.Models
     {
         public int MovieId { get; set; }
         public string Title { get; set; }
-        //public string Description { get; set; }
-        //public GenreType Genre { get; set; }
-        //public double AverageRating { get; set; }
+        public string Description { get; set; }
+        public GenreType Genre { get; set; }
+        public double AverageRating { get; set; }
     }
 }

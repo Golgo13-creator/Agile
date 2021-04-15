@@ -39,7 +39,7 @@ namespace Agile.Services
                 var query =
                     ctx
                         .Movies
-                        .Where(e => e.OwnerId == _userId)//adjustment may be needed
+                        //.Where(e => e.OwnerId == _userId)//adjustment may be needed
                         .Select(
                             e =>
                                 new MovieListItem
@@ -47,7 +47,7 @@ namespace Agile.Services
                                     MovieId = e.MovieId,
                                     Title = e.Title,
                                     Description = e.Description,
-                                    Genre = e.Genre,
+                                    Genre = (Models.GenreType)e.Genre,
                                     AverageRating = e.AverageRating
                                 }
                          );
@@ -69,12 +69,12 @@ namespace Agile.Services
                         MovieId = entity.MovieId,
                         Title = entity.Title,
                         Description = entity.Description,
-                        Genre = entity.Genre,
+                        Genre = (Models.GenreType)entity.Genre,
                         AverageRating = entity.AverageRating
                     };
             }
         }
-        public IEnumerable<MovieListItem> GetMovieByGenre(GenreType genre)
+        public IEnumerable<MovieListItem> GetMovieByGenre(Data.GenreType genre)
         {
             using (var ctx = new ApplicationDbContext())
             {
