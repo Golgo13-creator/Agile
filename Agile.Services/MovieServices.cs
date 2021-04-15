@@ -24,7 +24,7 @@ namespace Agile.Services
                     Title = model.Title,
                     Description = model.Description,
                     Genre = (Data.GenreType)model.Genre,
-                    AverageRating = model.AverageRating
+                   // AverageRating = model.AverageRating
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -47,7 +47,7 @@ namespace Agile.Services
                                     MovieId = e.MovieId,
                                     Title = e.Title,
                                     Description = e.Description,
-                                    Genre = (Models.GenreType)e.Genre,
+                                    Genre = e.Genre,
                                     AverageRating = e.AverageRating
                                 }
                          );
@@ -69,7 +69,7 @@ namespace Agile.Services
                         MovieId = entity.MovieId,
                         Title = entity.Title,
                         Description = entity.Description,
-                        Genre = (Models.GenreType)entity.Genre,
+                        Genre = entity.Genre,
                         AverageRating = entity.AverageRating
                     };
             }

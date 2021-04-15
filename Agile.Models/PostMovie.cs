@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Agile.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Agile.Models
         [MaxLength(5000)]
         public string Description { get; set; }
         public GenreType Genre { get; set; }
-        public double AverageRating { get; set; }
+        //public double AverageRating { get; set; }
         // public virtual List<Rating> Ratings { get; set; }
     }
 }

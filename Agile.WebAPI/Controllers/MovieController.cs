@@ -1,4 +1,5 @@
-﻿using Agile.Models;
+﻿using Agile.Data;
+using Agile.Models;
 using Agile.Services;
 using Microsoft.AspNet.Identity;
 using System;
