@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Agile.Data
 {
-    public enum GenreType { Horror = 1, Drama, Comedy, SciFi, Action }
+    public enum GenreType { Horror=1, Drama, Comedy, SciFi, Action }
     public class Movie
     {
         [Key]
