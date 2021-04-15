@@ -61,5 +61,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Agile.Data\Agile.Data.csproj">
+      <Project>{7add6919-1364-4d9d-bc7f-68dcb0ad93bc}</Project>
+      <Name>Agile.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Agile.Models\Agile.Models.csproj">
+      <Project>{c11797b9-1278-4d4f-b58b-4cda7524d3a6}</Project>
+      <Name>Agile.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,6 +15,7 @@ namespace Agile.Models
         [MaxLength(5000)]
         public string Description { get; set; }
         public GenreType Genre { get; set; }
-       // public virtual List<Rating> Ratings { get; set; }
+        public double AverageRating { get; set; }
+        // public virtual List<Rating> Ratings { get; set; }
     }
 }
