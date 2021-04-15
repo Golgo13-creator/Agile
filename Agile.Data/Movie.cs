@@ -13,11 +13,14 @@ namespace Agile.Data
     {
         [Key]
         public int MovieId { get; set; }
+        [Required]
         public string Title { get; set; }
+        [Required]
         public string Description { get; set; }
+        [Required]
         public GenreType Genre { get; set; }
-        [ForeignKey]
+      //  [ForeignKey()] //adjustment needed
         public double AverageRating { get; set; }
-        public virtual List<Rating> Ratings { get; set; }
+      //  public virtual List<Rating> Ratings { get; set; }
     }
 }

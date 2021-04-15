@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Agile.Models
 {
-    public enum GenreType { Horror = 1, Drama, Comedy, SciFi, Action }
+    //public enum GenreType { Horror = 1, Drama, Comedy, SciFi, Action }
     public class MovieListItem
     {
         public int MovieId { get; set; }
