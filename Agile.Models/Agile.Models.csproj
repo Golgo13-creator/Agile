@@ -55,8 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GetMovie.cs" />
+    <Compile Include="GetShow.cs" />
     <Compile Include="MovieListItem.cs" />
     <Compile Include="PostMovie.cs" />
+    <Compile Include="PostShow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
