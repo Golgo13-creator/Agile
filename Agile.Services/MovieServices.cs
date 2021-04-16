@@ -23,7 +23,7 @@ namespace Agile.Services
                     //OwnerId = _userId,
                     Title = model.Title,
                     Description = model.Description,
-                    Genre = (Data.GenreType)model.Genre,
+                    Genre = model.Genre,
                    // AverageRating = model.AverageRating
                 };
             using (var ctx = new ApplicationDbContext())
@@ -55,7 +55,7 @@ namespace Agile.Services
             }
         }
         //Get movie by title service method
-        public GetMovie GetMovieByTitle(string title)
+        public MovieDetail GetMovieByTitle(string title)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -64,12 +64,11 @@ namespace Agile.Services
                         .Movies
                         .Single(e => e.Title == title);
                 return
-                    new GetMovie
+                    new MovieDetail
                     {
                         MovieId = entity.MovieId,
                         Title = entity.Title,
                         Description = entity.Description,
-                        Genre = entity.Genre,
                         AverageRating = entity.AverageRating
                     };
             }
