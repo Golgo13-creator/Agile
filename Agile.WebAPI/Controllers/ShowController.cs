@@ -1,7 +1,13 @@
-﻿using System;
+﻿using Agile.Models;
+using Agile.Data;
+using Agile.Services;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http;
+using System.Web.Mvc;
 
 namespace Agile.WebAPI.Controllers
 {
@@ -10,7 +16,7 @@ namespace Agile.WebAPI.Controllers
     {
         private ShowService CreateShowService()
         {
-            var userId = Guid.Parse(userId.Identity.GetUserId());
+            var userId = Guid.Parse(User.Identity.GetUserId());
             var showService = new ShowService(userId);
             return showService;
         }
@@ -27,15 +33,15 @@ namespace Agile.WebAPI.Controllers
         //Get all Shows
         public IHttpActionResult GetAllShows()
         {
-            ShowServie showService = CreateShowService();
+            ShowService showService = CreateShowService();
             var shows = showService.GetShows();
             return Ok(shows);
         }
         //Get Show by Title
         public IHttpActionResult GetShowBytTitle(string title)
         {
-            CreateShowService showService = CreateShowService();
-            var show = showService.GetMovieByTitle(title);
+            ShowService showService = CreateShowService();
+            var show = showService.GetShowByTitle(title);
             return Ok(title);
 
         }
