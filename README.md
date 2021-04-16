@@ -1,6 +1,6 @@
 # Agile
 
-Trello Board where much of the planning and Agile activity was executed: https://trello.com/b/Bo0ohVml/movie-rater.
+Here's a link to the Trello Board where much of the planning and Agile activity was executed: https://trello.com/b/Bo0ohVml/movie-rater.
 
 The Agile project Movie Rater was worked on by a three person developer team. The work was initiated by talking over the project via zoom. 
 We then transitioned to the trello board linked above. We started our board from left to right starting with user stories. Once we 
