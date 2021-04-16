@@ -21,7 +21,8 @@ namespace Agile.Services
                 new Show()
                 {
                     Title = model.Title,
-                    Description = model.Description
+                    Description = model.Description,
+                    Genre = (ShowGenre)model.Genre
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -37,7 +38,7 @@ namespace Agile.Services
                     ctx
                         .Shows
                         .Select(
-                            else =>
+                            e =>
                                     new ShowList
                                     {
                                         ShowId = e.ShowId,
@@ -51,12 +52,33 @@ namespace Agile.Services
 
             }
         }
+        public IEnumerable<ShowList> GetShowByGenre(Data.ShowGenre genre)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Shows
+                        .Where(e => e.Genre == genre)
+                        .Select(
+                            e =>
+                                new ShowList
+                                {
+                                    ShowId = e.ShowId,
+                                    Title = e.Title,
+                                    Description = e.Description,
+                                    Rating = e.Rating
+                                }
+                                );
+                return query.ToArray();
+            }
+        }
 
         public GetShow GetShowByTitle(string title)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query =
+                var entity =
                     ctx
                         .Shows
                         .Single(e => e.Title == title);

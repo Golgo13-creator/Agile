@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace Agile.WebAPI.Controllers
 {
-    [System.Web.Authorize]
+    [System.Web.Http.Authorize]
     public class ShowController : ApiController
     {
         private ShowService CreateShowService()
@@ -44,6 +44,13 @@ namespace Agile.WebAPI.Controllers
             var show = showService.GetShowByTitle(title);
             return Ok(title);
 
+        }
+
+        public IHttpActionResult Get(GenreType genre)
+        {
+            ShowService showService = CreateShowService();
+            var show = showService.GetShowByGenre((Data.ShowGenre)genre);
+            return Ok(genre);
         }
 
     }
