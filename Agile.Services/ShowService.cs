@@ -51,6 +51,27 @@ namespace Agile.Services
 
             }
         }
+        public IEnumerable<ShowList> GetShowByGenre(Data.ShowGenre genre)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Shows
+                        .Where(e => e.Genre == genre)
+                        .Select(
+                            e =>
+                                new ShowList
+                                {
+                                    ShowId = e.ShowId,
+                                    Title = e.Title,
+                                    Description = e.Description,
+                                    Rating = e.Rating
+                                }
+                                );
+                return query.ToArray();
+            }
+        }
 
         public GetShow GetShowByTitle(string title)
         {
